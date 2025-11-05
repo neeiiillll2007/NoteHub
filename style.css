@@ -65,3 +65,20 @@ footer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
+
+.share {
+  background-color: #eaf7f0;
+  padding: 40px 20px;
+  border-radius: 25px;
+  margin: 40px auto;
+  width: 80%;
+}
+
+.share h2 {
+  color: #1cc88a;
+}
+
+.share p {
+  color: #444;
+  margin-bottom: 20px;
+}
