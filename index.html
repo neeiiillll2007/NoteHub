@@ -62,23 +62,11 @@
       background: #009624;
     }
 
-    .container {
-      margin: 40px auto;
-      width: 90%;
-      max-width: 800px;
-      background: #111;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 255, 100, 0.2);
-    }
-
-    h2 {
-      color: #00c853;
-    }
-
     ul {
       list-style: none;
       padding: 0;
+      width: 80%;
+      margin: 40px auto;
     }
 
     li {
@@ -94,6 +82,17 @@
       background: #00c853;
       color: #000;
       transform: scale(1.03);
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      border-radius: 8px;
+    }
+
+    li a:hover {
+      color: black;
     }
 
     .share-notes-btn {
@@ -131,48 +130,49 @@
     <!-- Search Bar -->
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search subject..." />
-      <button onclick="searchSubject()">🔍 Search</button>
+      <button id="searchButton">🔍 Search</button>
     </div>
   </header>
 
-<ul id="subjectList">
-  <li><a href="programming-python.html">Python</a></li>
-  <li><a href="programming-java.html">Java</a></li>
-  <li><a href="programming-c.html">C Programming</a></li>
-  <li><a href="data-structures.html">Data Structures</a></li>
-  <li><a href="database-management-systems.html">DBMS</a></li>
-  <li><a href="operating-systems.html">Operating Systems</a></li>
-  <li><a href="computer-networks.html">Computer Networks</a></li>
-  <li><a href="ai.html">Artificial Intelligence</a></li>
-</ul>
+  <!-- Subject List -->
+  <ul id="subjectList">
+    <li><a href="programming-python.html">Python</a></li>
+    <li><a href="programming-java.html">Java</a></li>
+    <li><a href="programming-c.html">C Programming</a></li>
+    <li><a href="data-structures.html">Data Structures</a></li>
+    <li><a href="database-management-systems.html">DBMS</a></li>
+    <li><a href="operating-systems.html">Operating Systems</a></li>
+    <li><a href="computer-networks.html">Computer Networks</a></li>
+    <li><a href="ai.html">Artificial Intelligence</a></li>
+  </ul>
 
-
-    <!-- Share Notes Button -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFmYKrQFUqhTeoHGx8ArOSZDM4FrPtoD7SJU5dAT9YGWCX5A/viewform?usp=header"
-       target="_blank"
-       class="share-notes-btn">
-       📤 Share Your Notes
-    </a>
-  </div>
+  <!-- Share Notes Button -->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFmYKrQFUqhTeoHGx8ArOSZDM4FrPtoD7SJU5dAT9YGWCX5A/viewform?usp=header"
+     target="_blank"
+     class="share-notes-btn">
+     📤 Share Your Notes
+  </a>
 
   <footer>
     <p>Made with ❤️ by Neil | StudyMate © 2025</p>
   </footer>
 
+  <!-- 🔍 Search Functionality Script -->
   <script>
-    // 🔍 Search Functionality
-    function searchSubject() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const subjects = document.querySelectorAll("#subjectList li");
+    document.getElementById('searchButton').addEventListener('click', function() {
+      const searchValue = document.getElementById('searchInput').value.toLowerCase();
+      const subjects = document.querySelectorAll('#subjectList li');
 
-      subjects.forEach(subject => {
-        const text = subject.textContent.toLowerCase();
-        subject.style.display = text.includes(input) ? "block" : "none";
+      subjects.forEach(li => {
+        const text = li.textContent.toLowerCase();
+        li.style.display = text.includes(searchValue) ? '' : 'none';
       });
-    }
+    });
   </script>
 </body>
 </html>
+
+
 
 
 
